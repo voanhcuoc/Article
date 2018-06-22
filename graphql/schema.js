@@ -14,23 +14,36 @@ const segmentSchema = buildSchema(`
     }
     type Mutation {
         createSegment(segment : SegmentModel ) : Segment
-        updateSegment(segment : SegmentModel ) : Segment
+        updateSegment(input : SegmentUpdate ) : Segment
         createUser(user:UserModel) : User
-        updateUser(user: UserModel) : User
+        updateUser(user: UserUpdate) : User
         createArticle(article : ArticleModel) : Article
-        updateArticle(article : ArticleModel) : Article
+        updateArticle(article : ArticleUpdate) : Article
         likeArticle(articleId : ID) : Message
         unlikeArticle(articleId : ID) : Message
     }
 
+    input SegmentUpdate{
+        old_name : String
+        new_name : String
+    }
+
     input SegmentModel{
         name : String
+    }
+    input ArticleUpdate {
+        old_articleId : ID
+        new_article : ArticleModel
     }
 
     input ArticleModel{
         title : String
         summary : String
         link : String
+    }
+    input UserUpdate{
+        old_userId : ID
+        new_user : UserModel
     }
 
     input UserModel {
