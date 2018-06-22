@@ -4,13 +4,13 @@ const RankSchema = require('./Rank');
 const UserSchema = require('./User');
 const SegmentSchema = require('./Segmnet');
 
-const Model = require('mongoose').model;
+const model = require('mongoose').model;
 
-var Article = Model('Article',ArticalSchema);
-var Like = Model('Like',LikeSchema);
-var Rank = Model('Rank',RankSchema);
-var User = Model('User',UserSchema);
-var Segment = Model('Segment',SegmentSchema);
+var Article = model('Article',ArticalSchema);
+var Like = model('Like',LikeSchema);
+var Rank = model('Rank',RankSchema);
+var User = model('User',UserSchema);
+var Segment = model('Segment',SegmentSchema);
 
 module.exports = {
     Article,
@@ -18,7 +18,4 @@ module.exports = {
     Rank,
     User,
     Segment
-}
-
-
-
+};
