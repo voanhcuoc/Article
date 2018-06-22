@@ -16,9 +16,9 @@ const segmentSchema = buildSchema(`
         createSegment(segment : SegmentModel ) : Segment
         updateSegment(input : SegmentUpdate ) : Segment
         createUser(user:UserModel) : User
-        updateUser(user: UserUpdate) : User
+        updateUser(input: UserUpdate) : User
         createArticle(article : ArticleModel) : Article
-        updateArticle(article : ArticleUpdate) : Article
+        updateArticle(input : ArticleUpdate) : Article
         likeArticle(articleId : ID) : Message
         unlikeArticle(articleId : ID) : Message
     }
