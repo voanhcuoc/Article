@@ -18,8 +18,8 @@ module.exports = {
     	Rank(args) => Rank.find({article_id : args.articleId, segment_id: args.segmentId}); // FIXME
     }
     Mutation : {
-    	createSegment(args) => Segment.create( args.segment.name).exec();
-    	updateSegment(args) => Segment.where(args.input.old_name).update(args.input.new_name);
+    	createSegment(args) => Segment.create({ name: args.segment.name }).exec();
+    	updateSegment(args) => Segment.where({ name: args.input.old_name }).update({ name: args.input.new_name });
     	createUser(args) => User.create(args.user).exec();
     	updateUser(args) => User.findbyId(args.input.old_userId).update(args.input.new_user);
     	createArticle(args) => Article.create(args.article).exec();
