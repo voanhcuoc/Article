@@ -2,7 +2,7 @@ const express = require('express');
 const { buildSchema } = require('graphql');
 const graphqlMiddleware = require('express-graphql');
 
-const segmentSchema = buildSchema(`
+const schema = buildSchema(`
     type Query{
         Segment(_id : ID) : Segment
         Segments : [Segment]
@@ -81,4 +81,6 @@ const segmentSchema = buildSchema(`
         segment_id : ID
         point : Int
     }
-`)
+`);
+
+module.exports = schema;

@@ -1,9 +1,9 @@
 var Schema = require('mongoose').Schema;
 
 var Rank = Schema({
-    article_id : {tyep : Schema.Types.ObjectId, ref : 'Article'},
+    article_id : {type : Schema.Types.ObjectId, ref : 'Article'},
     segment_id : {type : Schema.Types.ObjectId, ref: 'Segment'},
-    point : Numer
+    point : Number
 })
 
-module.exports  = Segment;
+module.exports  = Rank;
